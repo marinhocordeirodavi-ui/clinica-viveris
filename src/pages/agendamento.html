@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agendamento | Clínica Viveris</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<!-- Marcelo: Aqui é onde fica o menu do topo. -->
+<body>
+    <header>
+        <div class="container">
+            <h1>Clínica Viveris</h1>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="servicos.html">Nossos Serviços</a></li>
+                    <li><a href="agendamento.html" class="pagina-ativa">Agendamento</a></li>
+                    <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="titulo-pagina">
+            <div class="container">
+                <h2>Agende sua Consulta</h2>
+                <p>Preencha o formulário abaixo para marcar seu horário.</p>
+            </div>
+        </section>
+
+        <section class="formulario-container">
+
+            <form id="formAgendamento" onsubmit="return validarEEnviar();">
+
+                <div class="form-grupo">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome">
+                    <span class="mensagemErro"></span>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email">
+                    <span class="mensagemErro"></span>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="telefone">Telefone (Opcional):</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+                    <span class="mensagemErro"></span>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="data">Data Desejada:</label>
+                    <input type="date" id="data" name="data"> <!-- type="date" é o calendário -->
+                    <span class="mensagemErro"></span>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="especialidade">Especialidade:</label>
+                    <select id="especialidade" name="especialidade">
+                        <option value="">Selecione uma especialidade</option>
+                        <option value="Cardiologia">Cardiologia</option>
+                        <option value="Pediatria">Pediatria</option>
+                        <option value="Odontologia">Odontologia</option>
+                        <option value="Dermatologia">Dermatologia</option>
+                        <option value="urologia">Urologia</option>
+                        <option value="psiquiatria">Psiquiatria</option>
+                    </select>
+                    <span class="mensagemErro"></span>
+                </div>
+
+                <button type="submit" class="btn btn-solido btn-bloco">Confirmar Agendamento</button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-coluna">
+                    <h3>Clínica Viveris</h3>
+                    <p>Cuidando da sua saúde com excelência. Agende sua consulta e conheça nossa equipe.</p>
+                </div>
+
+                <div class="footer-coluna">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="../../index.html">Início</a></li>
+                        <li><a href="./sobre-nos.html">Sobre Nós</a></li>
+                        <li><a href="./servicos.html">Serviços</a></li>
+                        <li><a href="./contato.html">Contato</a></li>
+                        <li><a href="./agendamento.html">Agendamento</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-coluna">
+                    <h3>Contato</h3>
+                    <p><strong>Telefone:</strong> (85) 99444-5846</p>
+                    <p><strong>E-mail:</strong> contato@viveris.com.br</p>
+                    <p><strong>Endereço:</strong> R. Eliseu Uchoa Beco, 600 - Guararapes, Fortaleza/CE</p>
+                    <p><strong>Horário:</strong> Seg - Sex: 08h às 18h</p>
+                </div>
+
+            </div>
+        </div>
+<!-- Marcelo: parte do rodapé-->  
+        <div class="rodapé">
+            <p>© 2025 - Clínica Viveris - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+
+    <script src="../js/validacao.js"></script>
+
+</body>
+
+</html>

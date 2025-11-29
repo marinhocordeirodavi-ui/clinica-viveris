@@ -1,0 +1,555 @@
+/* ===================================================
+   ESTILOS GLOBAIS
+   ================================================= */
+
+/* Marcelo: O asterisco seleciona TODOS os elementos do site.
+   Usamos 'margin: 0' e 'padding: 0' para remover os espaços padrão que os navegadores
+   colocam automaticamente. 
+   'box-sizing: border-box' garante que o tamanho dos elementos inclua as bordas e preenchimentos. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Marcelo: é a cor do fundo e cor do texto padrão do site.*/
+body {
+    line-height: 1.6;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Marcelo: A função dessa classe é centralizar, defini o 'max-width' para limitar a largura e o 'margin: 0 auto' para centralizar.*/
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto; /* Marcelo: Centraliza o conteúdo */
+}
+
+/* ===================================================
+   CABEÇALHO E NAVEGAÇÃO (Todas as páginas)
+   ================================================= */
+
+/* --- ESTILOS DO CABEÇALHO --- */
+
+header {
+    background-color: #027a99; /* Marcelo: cor de fundo do cabeçalho */
+    color: #fff;
+    padding: 20px 0;
+    border-bottom: 3px solid #026781;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* --- MENU DE NAVEGAÇÃO --- */
+
+header nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline; /* Marcelo: Transforma a lista vertical em horizontal*/
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff; /* Marcelo: Cor do texto dos links do menu */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 0; 
+    border-bottom: 2px solid transparent; 
+    transition: border-color 0.3s ease; 
+}
+
+header nav ul li a.pagina-ativa {
+    border-bottom-color: #fff; /* Marcelo: cor do Indicar da página ativa (o traço que fica embaixo)*/
+}
+
+header nav ul li a:not(.pagina-ativa):hover {
+    border-bottom-color: rgba(255, 255, 255, 0.5); /* Marcelo: cor do efeito hover (o traço que fica embaixo quando passa o mouse)*/
+}
+
+/* ===================================================
+   ELEMENTOS GERAIS (Todas as páginas)
+   ================================================= */
+
+main {
+    padding: 20px 0; /* espaçamento */
+}
+
+/* --- BOTÕES--- */
+
+/*Marcelo: essa classe define a estrutura padrão de todos os botões*/
+.btn {
+    display: inline-block; 
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid transparent; 
+    transition: all 0.15s ease-out; 
+}
+
+/* Marcelo: esse codigo é do botão central do inicio que define o estilo*/
+.btn-fantasma {
+    background-color: transparent; 
+    color: #fff; /* Marcelo: cor do texto do botão */
+    border-color: #fff; /* Marcelo: cor da borda do botão */
+    padding: 10px 25px; 
+}
+
+.btn-fantasma:hover {
+    background-color: #fff; /* Marcelo: cor de fundo do botão ao passar o mouse */
+    color: #027a99; /* Marcelo: cor do texto do botão ao passar o mouse */
+    transform: translateY(-2px); 
+}
+
+.btn-solido {
+    background-color: #027a99; /* Marcelo: cor de fundo do botão de agendamento */
+    color: #fff; /* Marcelo: cor do texto do botão de agendamento */
+    border-color: #027a99; /* Marcelo: cor da borda do botão de agendamento */
+    padding: 12px 25px;
+}
+
+.btn-solido:hover {
+    background-color: #026781; /* Marcelo: cor de fundo do botão de agendamento ao passar o mouse */
+    border-color: #026781; /* Marcelo: cor da borda do botão de agendamento ao passar o mouse */
+    transform: translateY(-2px); 
+}
+
+.btn-bloco {
+    display: block; 
+    width: 100%;
+}
+
+.btn-confirmacao {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 30px auto 0;
+}
+
+/* Marcelo: A função dessa classe é alinhar os cards do inicio.*/
+.cards-container {
+    display: flex; /* Marcelo: display:flex para alinhar lado a lado */
+    justify-content: space-around;
+    flex-wrap: wrap; /* Marcelo: permite que os cards quebrem a linha */
+    margin-top: 20px;
+}
+
+/* Marcelo: essa parte é Estilização de cada card.*/
+/* Davi: modifiquei as sombras*/
+.card {
+    background: #fff; /* Marcelo: cor de fundo do card */
+    border: 1px solid #ddd; /* Marcelo: borda do card */
+    border-radius: 5px;
+    padding: 20px;
+    width: 300px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Davi: sombra do card */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Marcelo: Ao passar o mouse, o card "levanta" e a sombra aumenta. */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
+}
+
+.cards-container .card .icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+/* Marcelo: Título padrão para páginas internas */
+.titulo-pagina {
+    background-color: #f4f4f4; /* Marcelo: cor de fundo do título das páginas internas */
+    padding: 40px 0;
+    padding-top: 40px; /* Marcelo: espaçamento superior do título das páginas internas */
+    text-align: center;
+    margin-bottom: 30px; /* Marcelo: espaçamento inferior do título das páginas internas */
+}
+
+.titulo-pagina h2 {
+    font-size: 2.5em;
+    color: #333; /* Marcelo: cor do texto do título das páginas internas */
+}
+
+.titulo-pagina p {
+    font-size: 1.1em;
+    color: #666; /* Marcelo: cor do texto do parágrafo das páginas internas */
+    margin-bottom: 50px;
+}
+
+/* ===================================================
+   PÁGINA: INÍCIO (index.html)
+   ================================================= */
+
+/* Marcelo: essa parte é a da imagem central
+    Estilização do banner principal (Hero section)*/
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/AnyConv.com__criança.webp'); /* Marcelo: imagem de fundo, e a cor dela */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff; /* Marcelo: cor do texto da imagem */
+    padding: 140px 0; 
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px; /* Marcelo: espaçamento abaixo do título (h2) */
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px; /* Marcelo: espaçamento abaixo do parágrafo */
+}
+
+/* --- DESTAQUES (Por que nos escolher?) --- */
+
+.destaques {
+    background-color: #f9f9f9; /* Marcelo: cor de fundo da equipe*/
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.destaques h3 {
+    text-align: center;
+    font-size: 2.2em; 
+    font-weight: 700;   
+    margin-bottom: 40px; 
+    color: #333; /* Marcelo: cor do texto dos destaques e equipe */
+}
+
+/* --- Estilo da equipe --- */
+
+#equipe {
+    padding: 40px 0;
+    background-color: #f9f9f9; 
+}
+
+#equipe h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+#equipe .card h4 {
+    font-size: 1.25em; 
+    font-weight: 600;  
+    color: #333;      
+    margin-bottom: 5px; 
+}
+
+#equipe .card p {
+    font-size: 1.0em;
+    color: #666; 
+}
+
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-bottom: 15px; 
+    border: 3px solid #ddd;
+}
+
+/* ===================================================
+   PÁGINA: SERVIÇOS (servicos.html)
+   ================================================= */
+
+.lista-servicos {
+    padding-bottom: 60px;
+    background-color: #f9f9f9; /* Marcelo: cor de fundo da equipe*/
+    padding-top: 60px;
+}
+
+.servico-item {
+    display: flex; 
+    gap: 30px; 
+    align-items: flex-start; 
+    background-color: #ffffff; /* Marcelo: cor de fundo do card de serviço e da foto do medico*/
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
+    background-color: #ffffff; /* Marcelo: cor do fundo ao passar o mouse */
+}
+
+.servico-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* ===================================================
+   PÁGINA: SOBRE NÓS (sobre-nos.html)
+   ================================================= */
+
+.conteudo-principal {
+    background-color: #ffffff; /* Marcelo: cor de fundo do conteúdo principal*/
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.texto-descritivo {
+    display: flex;          
+    align-items: flex-start; 
+    gap: 20px;               
+    max-width:800px;
+    margin:auto;
+}
+
+.texto-descritivo img {
+    flex-shrink: 0;
+}
+
+.conteudo-texto {
+    flex: 1;
+}
+
+/* Marcelo: Estilo da foto do médico da página sobre nós */
+.servico-item .foto-medico {
+    width: 250px; 
+    height: auto;
+    border-radius: 8px;
+    margin-top: 5px; 
+}
+
+/* ===================================================
+   PÁGINA: AGENDAMENTO (agendamento.html)
+   ================================================= */
+
+.formulario-container {
+    background: #fff; /* Marcelo: cor de fundo do formulário */
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 20px auto; 
+}
+
+.form-grupo {
+    margin-bottom: 20px; /* Marcelo: espaçamento entre os campos do formulário*/
+}
+
+.form-grupo label {
+    display: block; 
+    margin-bottom: 5px; /*espaçamento */
+    font-weight: bold;
+}
+
+.form-grupo input,
+.form-grupo select {
+    width: 100%; /* Marcelo: faz o campo ocupar todo o espaço */
+    padding: 10px;
+    border: 1px solid #ddd; /* Marcelo: cor da borda do campos */
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* --- CLASSES DE ERRO --- */
+
+/* Ivan: Destaquei os campos erro para melhor visualisação de onde está preenchido incorretamente */
+input.erro, select.erro, textarea.erro {
+    border: 2px solid #e74c3c;
+    outline: none;
+    box-shadow: 0 0 4px rgba(231,76,60,0.25);
+}
+
+/* Ivan: Destaquei a mensagem de erro do formulario para melhor visuliazação do usuário
+   utilizei display: none; para esconder a mensagem de erro, e so será mostrada quando o javascript detectar um erro */
+.mensagemErro {
+    display: none;
+    color: #dc2626;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding: 5px 0;
+}
+
+.mensagemErro i {
+    margin-right: 5px;
+}
+
+/* ===================================================
+   PÁGINA: CONFIRMAÇÃO AGENDAMENTO (confirmacao-agendamento.html)
+   ================================================= */
+
+/* Ivan: Estilização do container de confirmação de agendamento 
+pode mudar se quiser kklk */
+.confirmacao-agendamento {
+    background-color: #fff;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ivan: Agendamento concluido, só isso, tentem deixam melhor por favor */
+.confirmacao-titulo {
+    color: #333;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+/* Ivan: fundo cinza (emoji de joinha) */
+.confirmacao-dados {
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+/* Ivan: Estilização dos dados preenchidos, com uma linha divisoria entre eles */
+.confirmacao-dados p {
+    margin: 15px 0;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 10px;
+}
+
+/* Ivan: remove a linha do canto */
+.confirmacao-dados p:last-child {
+    border-bottom: none;
+}
+
+/* Ivan: muda a cor dos dados em negrito e alinha. */
+.confirmacao-dados strong {
+    color: #007bff;
+    min-width: 120px;
+    display: inline-block;
+}
+
+.confirmacao-mensagem {
+    text-align: center;
+    color: #666;
+    margin: 20px 0;
+}
+
+/* Ivan: Dispenso explicação */
+.icone-sucesso {
+    color: #333;
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ===================================================
+   PÁGINA: CONTATO (contato.html)
+   ================================================= */
+
+.mapa-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.mapa-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ===================================================
+   RODAPÉ (Todas as páginas)
+   ================================================= */
+
+/*Davizinho*/
+footer {
+    background-color: #333; 
+    color: #ccc;
+    padding-top: 40px;
+    margin-top: 40px;
+    line-height: 1.7;
+}
+
+.footer-grid{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-coluna{
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-coluna h3 {
+    font-size: 1.3em;
+    color: #fff;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.footer-coluna p {
+    margin-bottom: 10px;
+}
+
+.footer-coluna ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-coluna ul li {
+    margin-bottom: 10px;
+}
+
+.footer-coluna ul li a {
+    color: #fff;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+/* --- rodapé direitos autorais --- */
+
+.rodapé {
+    background-color: #222; /* Marcelo: cor de fundo do rodapé */
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #555;
+}
+
+.rodapé p {
+    margin: 0;
+    color: #aaa; /* Marcelo: cor do texto do rodapé */
+    font-size: 0.9em;
+}
+

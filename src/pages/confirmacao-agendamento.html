@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento Concluído | Clínica Viveris</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script>
+        
+        window.addEventListener('DOMContentLoaded', function () {
+            const dados = JSON.parse(localStorage.getItem('agendamento'));
+
+            if (dados) {
+               
+                const databr = new Date(dados.data + 'T00:00:00').toLocaleDateString('pt-BR');
+
+                document.getElementById('nome').textContent = dados.nome;
+                document.getElementById('email').textContent = dados.email;
+                document.getElementById('data').textContent = databr;
+                document.getElementById('especialidade').textContent = dados.especialidade;
+
+                if (dados.telefone) {
+                    document.getElementById('telefone-container').style.display = 'block';
+                    document.getElementById('telefone').textContent = dados.telefone;
+                }
+
+                localStorage.removeItem('agendamento');
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Clínica Viveris</h1>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="../pages/servicos.html">Nossos Serviços</a></li>
+                    <li><a href="../pages/agendamento.html">Agendamento</a></li>
+                    <li><a href="../pages/sobre-nos.html">Sobre Nós</a></li>
+                    <li><a href="../pages/contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="confirmacao-agendamento">
+                <div class="icone-sucesso">✓</div>
+                <h2 class="confirmacao-titulo">Agendamento Concluído!</h2>
+
+                <div class="confirmacao-mensagem">
+                    <p>Seu agendamento foi realizado com sucesso. Abaixo estão os detalhes da sua consulta:</p>
+                </div>
+
+                <div class="confirmacao-dados">
+                    <p><strong>Nome:</strong> <span id="nome"></span></p>
+                    <p><strong>Email:</strong> <span id="email"></span></p>
+                    <p><strong>Data:</strong> <span id="data"></span></p>
+                    <p><strong>Especialidade:</strong> <span id="especialidade"></span></p>
+                    <p id="telefone-container" style="display: none"><strong>Telefone:</strong> <span id="telefone"></span></p>
+                </div>
+
+                <div class="confirmacao-mensagem">
+                    <p>Guarde essas informações. Em caso de dúvidas, entre em contato conosco.</p>
+                </div>
+
+                <a href="../../index.html" class="btn btn-solido btn-confirmacao">Voltar para Página Inicial</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-coluna">
+                    <h3>Clínica Viveris</h3>
+                    <p>Cuidando da sua saúde com excelência. Agende sua consulta e conheça nossa equipe.</p>
+                </div>
+
+                <div class="footer-coluna">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="../../index.html">Início</a></li>
+                        <li><a href="./sobre-nos.html">Sobre Nós</a></li>
+                        <li><a href="./servicos.html">Serviços</a></li>
+                        <li><a href="./contato.html">Contato</a></li>
+                        <li><a href="./agendamento.html">Agendamento</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-coluna">
+                    <h3>Contato</h3>
+                    <p><strong>Telefone:</strong> (85) 99444-5846</p>
+                    <p><strong>E-mail:</strong> contato@viveris.com.br</p>
+                    <p><strong>Endereço:</strong> R. Eliseu Uchoa Beco, 600 - Guararapes, Fortaleza/CE</p>
+                    <p><strong>Horário:</strong> Seg - Sex: 08h às 18h</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="rodapé">
+            <p>© 2025 - Clínica Viveris - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
